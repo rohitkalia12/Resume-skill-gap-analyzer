@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Skill Gap Analyzer - Gen AI Squad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Resume Skill Gap Analyzer</h1>
+        <p>Powered by Gen AI Squad</p>
+    </header>
+    <main>
+        <section id="input-section">
+            <form id="analyzer-form">
+                <div class="form-group">
+                    <label for="resume-upload">Upload Resume (PDF):</label>
+                    <input type="file" id="resume-upload" accept=".pdf" required>
+                </div>
+                <div class="form-group">
+                    <label for="job-role">Select Job Role:</label>
+                    <select id="job-role" required>
+                        <option value="">Choose a role</option>
+                        <option value="software-engineer">Software Engineer</option>
+                        <option value="data-scientist">Data Scientist</option>
+                        <option value="product-manager">Product Manager</option>
+                        <option value="ui-ux-designer">UI/UX Designer</option>
+                        <option value="marketing-specialist">Marketing Specialist</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="timeframe">Select Preparation Timeframe:</label>
+                    <div class="timeframe-container">
+                        <select id="timeframe" required>
+                            <option value="">Choose timeframe</option>
+                            <option value="1-month">1 Month</option>
+                            <option value="3-months">3 Months</option>
+                            <option value="6-months">6 Months</option>
+                            <option value="1-year">1 Year</option>
+                        </select>
+                        <div id="plan-preview" class="plan-preview hidden"></div>
+                        <button id="plan-btn" class="hidden">Let's Plan</button>
+                    </div>
+                </div>
+                <button type="submit" id="analyze-btn">Analyze Resume</button>
+            </form>
+        </section>
+        <section id="results-section" class="hidden">
+            <h2>Analysis Results</h2>
+            <div id="skill-score" class="result-card">
+                <h3>Skill Match Score</h3>
+                <p id="score-value">0%</p>
+            </div>
+            <div id="matched-skills" class="result-card">
+                <h3>Matched Skills</h3>
+                <ul id="matched-list"></ul>
+            </div>
+            <div id="missing-skills" class="result-card">
+                <h3>Missing Skills</h3>
+                <ul id="missing-list"></ul>
+            </div>
+            <div id="learning-roadmap" class="result-card">
+                <h3>Learning Roadmap</h3>
+                <ol id="roadmap-list"></ol>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Gen AI Squad. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
